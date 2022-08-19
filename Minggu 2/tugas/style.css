@@ -1,0 +1,32 @@
+* {
+    font-family: 'Silkscreen', cursive;
+}
+
+.mycontainer {
+    color: white;
+    width: 300px;
+    height: 200px;
+
+    background-image: url('https://i.pinimg.com/originals/b2/83/85/b283859f2b06218e1d4f908625c05b94.jpg');
+    background-position: center;
+    background-size: cover;
+
+    border-radius: 10px;
+
+    text-align: center;
+    padding-top: 40px;
+
+}
+
+.wrap {
+    margin: auto;
+    width: 300px;
+}
+
+.mybtn {
+    width: 300px;
+    height: 50px;
+    background-color: brown;
+    color: white;
+    border-radius: 10px;
+}
