@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Quiz</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <style type="text/css">
+        div.question-box {
+            margin: 10px 0 20px 0;
+        }
+
+        table {
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            padding: 10px;
+            border: 1px solid;
+        }
+
+        .urgent {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        function q1() {
+            // Masukkan kode kamu di sini
+            $('#names-q1').empty();
+            $.ajax({
+                type: "GET",
+                url: "http://spartacodingclub.shop/sparta_api/citybike",
+                data: {},
+                success: function (response) {
+                    let dates = response['getStationList']['row'];
+                    for (let i = 0; i < dates.length; i++) {
+                        let stationName = dates[i]['stationName'];
+                        let rackTotCnt = dates[i]['rackTotCnt'];
+                        let parkingBikeTotCnt = dates[i]['parkingBikeTotCnt'];
+                        let temp_html = '';
+
+                        if (parkingBikeTotCnt < 5) {
+                            temp_html = `<tr class="urgent">
+                    <td>${stationName}</td>
+                    <td>${rackTotCnt}</td>
+                    <td>${parkingBikeTotCnt}</td>
+                </tr>`;
+                        } else {
+                            temp_html = `<tr>
+                    <td>${stationName}</td>
+                    <td>${rackTotCnt}</td>
+                    <td>${parkingBikeTotCnt}</td>
+                </tr>`;
+                        }
+
+
+                        $('#names-q1').append(temp_html);
+                    }
+                }
+            })
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>Practice jQuery + Ajax</h1>
+
+    <hr />
+
+    <div class="question-box">
+        <h2>2. Practice using the CityBike API</h2>
+        <p>Show me the current status of all bikes</p>
+        <p>Update the data below with the latest data everytime the "Update" button is clicked</p>
+        <button onclick="q1()">Update</button>
+        <table>
+            <thead>
+                <tr>
+                    <td>Bike Stand Location</td>
+                    <td>Bike Stand Count</td>
+                    <td>Parked Bike Count</td>
+                </tr>
+            </thead>
+            <tbody id="names-q1">
+                <tr>
+                    <td>102. Fun Fun St.</td>
+                    <td>22</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>103. Happy Sad Ave.</td>
+                    <td>16</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <td>104. Potato Salami Dr.</td>
+                    <td>16</td>
+                    <td>0</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
