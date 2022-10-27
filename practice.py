@@ -12,7 +12,7 @@ db = client.dbsparta
 
 # user = db.users.find_one({'name': 'syahrin'})
 
-# print(user)
+# print(user) aa
 
 # db.users.update_one({'name': 'syahrin'}, {'$set': {'age': 17}})
 
