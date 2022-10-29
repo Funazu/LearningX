@@ -15,9 +15,9 @@ db.books.insert_one({
 })
 
 db.books.insert_one({
-    'title': 'The Fisherman and the Fish',
-    'author': 'Joseph Choi',
-    'rating': 10
+    'title': 'Fire in the Water',
+    'author': 'Some Dude',
+    'rating': 57
 })
 
 db.books.update_one(
