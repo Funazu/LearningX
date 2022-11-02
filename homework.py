@@ -1,5 +1,5 @@
 from pymongo import MongoClient
-client = MongoClient('mongodb+srv://fauzunnaja:kamukepodeh@cluster0.kwi1dlp.mongodb.net/?retryWrites=true&w=majority')
+client = MongoClient('mongodb+srv://syahrinvirnanda:syahrin123@cluster0.ar4suzr.mongodb.net/?retryWrites=true&w=majority')
 db = client.dbsparta
 
 db.books.insert_one({
