@@ -1,7 +1,7 @@
 # LearningX
 part of LearningX 
 
-# package python
+# Package Python
 | pymongo
 | beautifulsoup4
 | requests
