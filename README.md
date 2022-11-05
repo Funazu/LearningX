@@ -9,7 +9,7 @@ part of LearningX
 
 # Mini Project
 - Bucket
-https://movies.fauzunnaja.top/
+https://bucket.fauzunnaja.top/
 - Mars
 https://mars.fauzunnaja.top/
 - Movies
